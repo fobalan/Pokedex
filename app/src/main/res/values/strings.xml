@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Kotlin Pokedex</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="kotlin_pokedex">Kotlin Pokedex</string>
+    <string name="search_bar_hint"># or name</string>
+    <string name="abilities">Abilities</string>
+    <string name="not_found_image">Not found image</string>
+    <string name="pokemon_image">Pokemon image</string>
+    <string name="moves">Moves</string>
+    <string name="games">Games</string>
+    <string name="expand_games">Expand games</string>
+    <string name="expand_moves">Expand moves</string>
+    <string name="next_pokemon">next pokemon</string>
+    <string name="previous_pokemon">previous pokemon</string>
+    <string name="title_activity_pokedex_detail">Pokedex Detail</string>
+</resources>
