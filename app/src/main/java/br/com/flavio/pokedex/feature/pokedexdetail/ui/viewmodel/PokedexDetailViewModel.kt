@@ -59,10 +59,10 @@ class PokedexDetailViewModel(
         } else {
             event.value = ViewEvent.ShowPreviousButton
         }
+        setPokemonImage()
         state.value = ViewState.PokemonNameState("#${pokemonDetail.id} ${pokemonDetail.name}")
         state.value = ViewState.PokemonWeightState("Weight: ${pokemonDetail.weight}hg")
         state.value = ViewState.PokemonHeightState("Height: ${pokemonDetail.height}dm")
-        state.value = ViewState.PokemonImageState(requestManager.load(pokemonDetail.image))
         state.value = ViewState.PokemonTypesState(pokemonDetail.types)
         state.value = ViewState.PokemonAbilitiesState(
             pokemonDetail.abilities.map { it.ability },
@@ -109,13 +109,17 @@ class PokedexDetailViewModel(
     }
 
     fun changePokemonImage() {
+        shinyImage = !shinyImage
+        setPokemonImage()
+    }
+
+    private fun setPokemonImage(){
         if (::pokemonDetail.isInitialized) {
             state.value = if (shinyImage) {
-                ViewState.PokemonImageState(requestManager.load(pokemonDetail.image))
-            } else {
                 ViewState.PokemonImageState(requestManager.load(pokemonDetail.imageShiny))
+            } else {
+                ViewState.PokemonImageState(requestManager.load(pokemonDetail.image))
             }
-            shinyImage = !shinyImage
         }
     }
 
